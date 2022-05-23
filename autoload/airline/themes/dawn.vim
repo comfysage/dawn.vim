@@ -1,5 +1,5 @@
 
-function! airline#themes#fantastic#refresh()
+function! airline#themes#dawn#refresh()
   let s:colors = {
   \ "black": { "gui": "#24252A", "cterm": "0"   },
   \ "medium_gray": { "gui": "#373639", "cterm": "243" },
@@ -45,10 +45,10 @@ function! airline#themes#fantastic#refresh()
   let s:term_visual_grey = s:colors.visual_grey.cterm
 
   " # Palette
-  let g:airline#themes#fantastic#palette = {}
+  let g:airline#themes#dawn#palette = {}
 
   " ## Accents
-  let g:airline#themes#fantastic#palette.accents = {
+  let g:airline#themes#dawn#palette.accents = {
         \ 'red': [ s:colors.red.gui, '', s:term_red, 0 ]
         \ }
 
@@ -56,10 +56,10 @@ function! airline#themes#fantastic#refresh()
   let s:N1 = [ s:colors.cursor_grey.gui, s:colors.green.gui, s:term_cursor_grey, s:term_green ]
   let s:N2 = [ s:colors.white.gui, s:colors.visual_grey.gui, s:term_white, s:term_visual_grey ]
   let s:N3 = [ s:colors.green.gui, s:colors.cursor_grey.gui, s:term_green, s:term_cursor_grey ]
-  let g:airline#themes#fantastic#palette.normal = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
+  let g:airline#themes#dawn#palette.normal = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
 
   let group = airline#themes#get_highlight('vimCommand')
-  let g:airline#themes#fantastic#palette.normal_modified = {
+  let g:airline#themes#dawn#palette.normal_modified = {
         \ 'airline_c': [ group[0], '', group[2], '', '' ]
         \ }
 
@@ -67,86 +67,86 @@ function! airline#themes#fantastic#refresh()
   let s:I1 = [ s:colors.cursor_grey.gui, s:colors.blue.gui, s:term_cursor_grey, s:term_blue ]
   let s:I2 = s:N2
   let s:I3 = [ s:colors.blue.gui, s:colors.cursor_grey.gui, s:term_blue, '' ]
-  let g:airline#themes#fantastic#palette.insert = airline#themes#generate_color_map(s:I1, s:I2, s:I3)
-  let g:airline#themes#fantastic#palette.insert_modified = g:airline#themes#fantastic#palette.normal_modified
+  let g:airline#themes#dawn#palette.insert = airline#themes#generate_color_map(s:I1, s:I2, s:I3)
+  let g:airline#themes#dawn#palette.insert_modified = g:airline#themes#dawn#palette.normal_modified
 
   " ## Replace Mode
   let s:R1 = [ s:colors.cursor_grey.gui, s:colors.red.gui, s:term_cursor_grey, s:term_red ]
   let s:R2 = s:N2
   let s:R3 = [ s:colors.red.gui, s:colors.cursor_grey.gui, s:term_red, '' ]
-  let g:airline#themes#fantastic#palette.replace = airline#themes#generate_color_map(s:R1, s:R2, s:R3)
-  let g:airline#themes#fantastic#palette.replace_modified = g:airline#themes#fantastic#palette.normal_modified
+  let g:airline#themes#dawn#palette.replace = airline#themes#generate_color_map(s:R1, s:R2, s:R3)
+  let g:airline#themes#dawn#palette.replace_modified = g:airline#themes#dawn#palette.normal_modified
 
   " ## Visual Mode
   let s:V1 = [ s:colors.cursor_grey.gui, s:colors.purple.gui, s:term_cursor_grey, s:term_purple ]
   let s:V2 = s:N2
   let s:V3 = [ s:colors.purple.gui, s:colors.cursor_grey.gui, s:term_purple, '' ]
-  let g:airline#themes#fantastic#palette.visual = airline#themes#generate_color_map(s:V1, s:V2, s:V3)
-  let g:airline#themes#fantastic#palette.visual_modified = g:airline#themes#fantastic#palette.normal_modified
+  let g:airline#themes#dawn#palette.visual = airline#themes#generate_color_map(s:V1, s:V2, s:V3)
+  let g:airline#themes#dawn#palette.visual_modified = g:airline#themes#dawn#palette.normal_modified
 
   " ## Inactive Mode
   let s:IA1 = [ s:colors.cursor_grey.gui, s:colors.white.gui, s:term_cursor_grey, s:term_white ]
   let s:IA2 = [ s:colors.white.gui, s:colors.visual_grey.gui, s:term_white, s:term_visual_grey ]
   let s:IA3 = s:N2
-  let g:airline#themes#fantastic#palette.inactive = airline#themes#generate_color_map(s:IA1, s:IA2, s:IA3)
-  let g:airline#themes#fantastic#palette.inactive_modified = {
+  let g:airline#themes#dawn#palette.inactive = airline#themes#generate_color_map(s:IA1, s:IA2, s:IA3)
+  let g:airline#themes#dawn#palette.inactive_modified = {
         \ 'airline_c': [ group[0], '', group[2], '', '' ]
         \ }
 
   " ## Warnings
   let s:WI = [ s:colors.cursor_grey.gui, s:colors.yellow.gui, s:term_cursor_grey, s:term_yellow ]
-  let g:airline#themes#fantastic#palette.normal.airline_warning = [
+  let g:airline#themes#dawn#palette.normal.airline_warning = [
        \ s:WI[0], s:WI[1], s:WI[2], s:WI[3]
        \ ]
 
-  let g:airline#themes#fantastic#palette.normal_modified.airline_warning =
-      \ g:airline#themes#fantastic#palette.normal.airline_warning
+  let g:airline#themes#dawn#palette.normal_modified.airline_warning =
+      \ g:airline#themes#dawn#palette.normal.airline_warning
 
-  let g:airline#themes#fantastic#palette.insert.airline_warning =
-      \ g:airline#themes#fantastic#palette.normal.airline_warning
+  let g:airline#themes#dawn#palette.insert.airline_warning =
+      \ g:airline#themes#dawn#palette.normal.airline_warning
 
-  let g:airline#themes#fantastic#palette.insert_modified.airline_warning =
-      \ g:airline#themes#fantastic#palette.normal.airline_warning
+  let g:airline#themes#dawn#palette.insert_modified.airline_warning =
+      \ g:airline#themes#dawn#palette.normal.airline_warning
 
-  let g:airline#themes#fantastic#palette.visual.airline_warning =
-      \ g:airline#themes#fantastic#palette.normal.airline_warning
+  let g:airline#themes#dawn#palette.visual.airline_warning =
+      \ g:airline#themes#dawn#palette.normal.airline_warning
 
-  let g:airline#themes#fantastic#palette.visual_modified.airline_warning =
-      \ g:airline#themes#fantastic#palette.normal.airline_warning
+  let g:airline#themes#dawn#palette.visual_modified.airline_warning =
+      \ g:airline#themes#dawn#palette.normal.airline_warning
 
-  let g:airline#themes#fantastic#palette.replace.airline_warning =
-      \ g:airline#themes#fantastic#palette.normal.airline_warning
+  let g:airline#themes#dawn#palette.replace.airline_warning =
+      \ g:airline#themes#dawn#palette.normal.airline_warning
 
-  let g:airline#themes#fantastic#palette.replace_modified.airline_warning =
-      \ g:airline#themes#fantastic#palette.normal.airline_warning
+  let g:airline#themes#dawn#palette.replace_modified.airline_warning =
+      \ g:airline#themes#dawn#palette.normal.airline_warning
 
   " ## Errors
   let s:ER = [ s:colors.cursor_grey.gui, s:colors.red.gui, s:term_cursor_grey, s:term_red ]
-  let g:airline#themes#fantastic#palette.normal.airline_error = [
+  let g:airline#themes#dawn#palette.normal.airline_error = [
        \ s:ER[0], s:ER[1], s:ER[2], s:ER[3]
        \ ]
 
-  let g:airline#themes#fantastic#palette.normal_modified.airline_error =
-      \ g:airline#themes#fantastic#palette.normal.airline_error
+  let g:airline#themes#dawn#palette.normal_modified.airline_error =
+      \ g:airline#themes#dawn#palette.normal.airline_error
 
-  let g:airline#themes#fantastic#palette.insert.airline_error =
-      \ g:airline#themes#fantastic#palette.normal.airline_error
+  let g:airline#themes#dawn#palette.insert.airline_error =
+      \ g:airline#themes#dawn#palette.normal.airline_error
 
-  let g:airline#themes#fantastic#palette.insert_modified.airline_error =
-      \ g:airline#themes#fantastic#palette.normal.airline_error
+  let g:airline#themes#dawn#palette.insert_modified.airline_error =
+      \ g:airline#themes#dawn#palette.normal.airline_error
 
-  let g:airline#themes#fantastic#palette.visual.airline_error =
-      \ g:airline#themes#fantastic#palette.normal.airline_error
+  let g:airline#themes#dawn#palette.visual.airline_error =
+      \ g:airline#themes#dawn#palette.normal.airline_error
 
-  let g:airline#themes#fantastic#palette.visual_modified.airline_error =
-      \ g:airline#themes#fantastic#palette.normal.airline_error
+  let g:airline#themes#dawn#palette.visual_modified.airline_error =
+      \ g:airline#themes#dawn#palette.normal.airline_error
 
-  let g:airline#themes#fantastic#palette.replace.airline_error =
-      \ g:airline#themes#fantastic#palette.normal.airline_error
+  let g:airline#themes#dawn#palette.replace.airline_error =
+      \ g:airline#themes#dawn#palette.normal.airline_error
 
-  let g:airline#themes#fantastic#palette.replace_modified.airline_error =
-      \ g:airline#themes#fantastic#palette.normal.airline_error
+  let g:airline#themes#dawn#palette.replace_modified.airline_error =
+      \ g:airline#themes#dawn#palette.normal.airline_error
 
 endfunction
 
-call airline#themes#fantastic#refresh()
+call airline#themes#dawn#refresh()
