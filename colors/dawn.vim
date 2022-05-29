@@ -82,6 +82,9 @@ call s:h("CursorLineNr", { "fg": s:orange })
 call s:h("Comment", { "fg": s:bg3 })
 hi! link Folded Comment
 
+call s:h("WinBar", { "fg": s:bg3, "gui": "italic" })
+call s:h("WinBarNC", { "fg": s:bg2, "gui": "italic" })
+
 hi! link FoldColumn       TabLine
 hi! link SignColumn       LineNr
 
