@@ -8,7 +8,8 @@ Whilst working on dawn.vim I was inspired by the heavy documentation of [nord](h
 
 More documentation in the [docs](./docs/README.md).
 
-[#]: # "TODO: Add screenshots"
+![javascript-example-code](./img/javascript.png)
+![vim-example-code](./img/vim.png)
 
 ## Installation & Usage
 If you use [vim-plug](https://github.com/junegunn/vim-plug) you can add this to your `.vimrc` / `init.vim`:
