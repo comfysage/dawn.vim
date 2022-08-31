@@ -24,3 +24,7 @@ Then:
 set background=dark " Set to light for a light variant
 colorscheme dawn
 ```
+
+## *Know Issues*
+
+If you see random lines on empty buffers try adding `hi EndOfBuffer gui=NONE` to your config. Be sure to move this line to somewhere in your config after you load the colorscheme.
